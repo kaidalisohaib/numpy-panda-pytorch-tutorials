@@ -27,12 +27,25 @@ def understanding_axes():
             [4, 3, 2, 0],
         ]
     )
-    print(table.max())
-    print(table.max(axis=0))
-    print(table.max(axis=1))
+    print("Max", table.max())
+    print("Max axis 0", table.max(axis=0))
+    print("Max axis 1", table.max(axis=1))
     # So, axis 0 is like Y and axis 1 is like X in a 2d coordinate system
+
+
+# Broadcasting
+def broadcasting():
+    print("Broadcasting".center(30, "="))
+    A = np.arange(32).reshape(4, 1, 8)
+    print("A", A)
+
+    B = np.arange(48).reshape(1, 6, 8)
+    print("B", B)
+
+    print("A+B", A + B)
 
 
 if __name__ == "__main__":
     mastering_shape()
     understanding_axes()
+    broadcasting()
