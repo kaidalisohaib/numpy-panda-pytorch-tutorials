@@ -1,17 +1,18 @@
-# This is a sample Python script.
-
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows,
-# actions, and settings.
+import numpy as np
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f"Hi, {name}")  # Press Ctrl+F8 to toggle the breakpoint.
+# Mastering Shape
+def mastering_shape():
+    temperatures = np.array(
+        [29.3, 42.1, 18.8, 16.1, 38.0, 12.5, 12.6, 49.9, 38.6, 31.3, 9.2, 22.2]
+    ).reshape(2, 2, 3)
+    print(temperatures)
+    print(temperatures.shape)
+
+    temperatures = temperatures.swapaxes(1, 2)
+    print(temperatures)
+    print(temperatures.shape)
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == "__main__":
-    print_hi("PyCharm")
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    mastering_shape()
