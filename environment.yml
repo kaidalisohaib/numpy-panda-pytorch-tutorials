@@ -4,28 +4,51 @@ channels:
   - defaults
 dependencies:
   - black=22.6.0=pyhd8ed1ab_0
+  - blas=1.0=mkl
+  - brotli=1.0.9=ha925a31_2
   - bzip2=1.0.8=h8ffe710_4
-  - ca-certificates=2022.6.15=h5b45459_0
+  - ca-certificates=2022.4.26=haa95532_0
   - cffi=1.15.1=py39h0878f49_0
   - cfgv=3.3.1=pyhd8ed1ab_0
   - click=8.1.3=py39hcbf5309_0
   - colorama=0.4.5=pyhd8ed1ab_0
+  - cycler=0.11.0=pyhd3eb1b0_0
   - dataclasses=0.8=pyhc8e2a94_3
   - distlib=0.3.4=pyhd8ed1ab_0
   - filelock=3.7.1=pyhd8ed1ab_0
   - flake8=4.0.1=pyhd8ed1ab_2
+  - fonttools=4.25.0=pyhd3eb1b0_0
+  - freetype=2.10.4=hd328e21_0
+  - icu=58.2=ha925a31_3
   - identify=2.5.1=pyhd8ed1ab_0
   - importlib-metadata=4.11.4=py39hcbf5309_0
+  - intel-openmp=2021.4.0=haa95532_3556
+  - jpeg=9e=h2bbff1b_0
+  - kiwisolver=1.4.2=py39hd77b12b_0
   - libcst=0.4.6=py39he61d37a_0
   - libffi=3.4.2=h8ffe710_5
-  - libzlib=1.2.12=h8ffe710_1
+  - libpng=1.6.37=h2a8f88b_0
+  - libtiff=4.2.0=he0120a3_1
+  - libwebp=1.2.2=h2bbff1b_0
+  - lz4-c=1.9.3=h2bbff1b_1
+  - matplotlib=3.5.1=py39haa95532_1
+  - matplotlib-base=3.5.1=py39hd77b12b_1
   - mccabe=0.6.1=py_1
+  - mkl=2021.4.0=haa95532_640
+  - mkl-service=2.4.0=py39h2bbff1b_0
+  - mkl_fft=1.3.1=py39h277e83a_0
+  - mkl_random=1.2.2=py39hf11a4ad_0
   - monkeytype=22.2.0=pyh191b570_0
+  - munkres=1.1.4=py_0
   - mypy=0.961=py39hb82d6ee_0
   - mypy_extensions=0.4.3=py39hcbf5309_5
   - nodeenv=1.7.0=pyhd8ed1ab_0
-  - openssl=3.0.5=h8ffe710_0
+  - numpy=1.22.3=py39h7a0a035_0
+  - numpy-base=1.22.3=py39hca35cd5_0
+  - openssl=1.1.1p=h2bbff1b_0
+  - packaging=21.3=pyhd3eb1b0_0
   - pathspec=0.9.0=pyhd8ed1ab_0
+  - pillow=9.0.1=py39hdc2b20a_0
   - pip=22.1.2=pyhd8ed1ab_0
   - platformdirs=2.5.1=pyhd8ed1ab_0
   - pre-commit=2.19.0=py39hcbf5309_0
@@ -33,15 +56,21 @@ dependencies:
   - pycodestyle=2.8.0=pyhd8ed1ab_0
   - pycparser=2.21=pyhd8ed1ab_0
   - pyflakes=2.4.0=pyhd8ed1ab_0
-  - python=3.9.13=hcf16a7b_0_cpython
+  - pyparsing=3.0.4=pyhd3eb1b0_0
+  - pyqt=5.9.2=py39hd77b12b_6
+  - python=3.9.12=h6244533_0
+  - python-dateutil=2.8.2=pyhd3eb1b0_0
   - python_abi=3.9=2_cp39
   - pyyaml=6.0=py39hb82d6ee_4
+  - qt=5.9.7=vc14h73c81de_0
   - setuptools=63.1.0=py39hcbf5309_0
+  - sip=4.19.13=py39hd77b12b_0
   - six=1.16.0=pyh6c4a22f_0
   - sqlite=3.39.0=h8ffe710_0
   - tk=8.6.12=h8ffe710_0
   - toml=0.10.2=pyhd8ed1ab_0
   - tomli=2.0.1=pyhd8ed1ab_0
+  - tornado=6.1=py39h2bbff1b_0
   - typed-ast=1.5.4=py39hb82d6ee_0
   - typing_extensions=4.3.0=pyha770c72_0
   - typing_inspect=0.7.1=pyh6c4a22f_0
@@ -55,3 +84,6 @@ dependencies:
   - xz=5.2.5=h62dcd97_1
   - yaml=0.2.5=h8ffe710_2
   - zipp=3.8.0=pyhd8ed1ab_0
+  - zlib=1.2.12=h8cc25b3_2
+  - zstd=1.5.2=h19a0ad4_0
+prefix: C:\Users\SohaibK\miniconda3\envs\numpy-panda-pytorch-tutorials
