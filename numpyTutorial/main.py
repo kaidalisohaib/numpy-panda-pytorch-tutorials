@@ -70,9 +70,52 @@ def masking_and_filtering():
     # Can use binary [ &, | ] operators with masks
 
 
+# Transposing
+def transposing():
+    print("Transposing".center(30, "="))
+    a = np.array(
+        [
+            [1, 2],
+            [3, 4],
+            [5, 6],
+        ]
+    )
+    print(a.T)
+    print(a.transpose())
+
+
+# Sorting
+def sorting():
+    print("Sorting".center(30, "="))
+    data = np.array([[7, 1, 4], [8, 6, 5], [1, 2, 3]])
+    print(np.sort(data))
+    print(np.sort(data, axis=None))
+    print(np.sort(data, axis=0))
+
+
+# Concatenation
+def concatenation():
+    print("Concatenation".center(30, "="))
+    a = np.array([[4, 8], [6, 1]])
+    b = np.array(
+        [
+            [3, 5],
+            [7, 2],
+        ]
+    )
+    print(np.hstack((a, b)))
+    print(np.vstack((b, a)))
+    print(np.concatenate((a, b)))
+    print(np.concatenate((a, b), axis=None))
+    # These functions take tuple of arrays as their first argument
+
+
 if __name__ == "__main__":
     mastering_shape()
     understanding_axes()
     broadcasting()
     indexing()
     masking_and_filtering()
+    transposing()
+    sorting()
+    concatenation()
