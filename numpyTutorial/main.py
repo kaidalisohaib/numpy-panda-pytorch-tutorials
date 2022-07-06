@@ -55,7 +55,19 @@ def indexing():
         assert square[:, i].sum() == 34
         print(square[i, :], "\n\n")
         assert square[i, :].sum() == 34
-    # [axis 1, ..., axis n]
+    # [axis 0, ..., axis n]
+
+
+# Masking and Filtering
+def masking_and_filtering():
+    print("Masking and Filtering".center(30, "="))
+    numbers = np.linspace(start=1, stop=50, num=24, dtype=int).reshape(4, -1)
+    print(numbers)
+    mask = numbers % 4 == 0
+    print(mask)
+    print(numbers[mask])
+    print(numbers[numbers % 4 == 0])
+    # Can use binary [ &, | ] operators with masks
 
 
 if __name__ == "__main__":
@@ -63,3 +75,4 @@ if __name__ == "__main__":
     understanding_axes()
     broadcasting()
     indexing()
+    masking_and_filtering()
