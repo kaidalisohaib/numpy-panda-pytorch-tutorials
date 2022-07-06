@@ -45,7 +45,21 @@ def broadcasting():
     print("A+B", A + B)
 
 
+# Indexing
+def indexing():
+    print("Indexing".center(30, "="))
+    square = np.array([[16, 3, 2, 13], [5, 10, 11, 8], [9, 6, 7, 12], [4, 15, 14, 1]])
+
+    for i in range(4):
+        print(square[:, i], "\n")
+        assert square[:, i].sum() == 34
+        print(square[i, :], "\n\n")
+        assert square[i, :].sum() == 34
+    # [axis 1, ..., axis n]
+
+
 if __name__ == "__main__":
     mastering_shape()
     understanding_axes()
     broadcasting()
+    indexing()
