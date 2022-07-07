@@ -172,6 +172,15 @@ def handling_missing_data():
     print(df_.dropna())
 
 
+# Iterating Over a Pandas DataFrame
+def iterating_over_dataframe():
+    print("Iterating Over a Pandas DataFrame".center(40, "="))
+    # iteritems for columns
+
+    for item in df.itertuples():
+        print(item)
+
+
 if __name__ == "__main__":
     introduction()
     creating_dataframes()
@@ -183,3 +192,4 @@ if __name__ == "__main__":
     sorting_a_pandas_dataframe()
     filtering_data()
     handling_missing_data()
+    iterating_over_dataframe()
