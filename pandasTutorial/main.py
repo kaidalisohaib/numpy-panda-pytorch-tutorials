@@ -21,7 +21,7 @@ df = pd.DataFrame(data=data, index=row_labels)
 
 # Introduction
 def introduction():
-    print("Introduction".center(30, "="))
+    print("Introduction".center(40, "="))
 
     # Pandas DataFrame
     print(df)
@@ -35,7 +35,7 @@ def introduction():
 
 # Creating Pandas DataFrames
 def creating_dataframes():
-    print("Creating Pandas DataFrames".center(30, "="))
+    print("Creating Pandas DataFrames".center(40, "="))
     # From a dictionary
     d = {"x": [1, 2, 3], "y": np.array([2, 4, 8]), "z": 100}
     print(pd.DataFrame(d), "\n")
@@ -60,7 +60,7 @@ def creating_dataframes():
 
 # Retrieving Labels and Data
 def retrieving_labels_and_data():
-    print("Retrieving Labels and Data".center(30, "="))
+    print("Retrieving Labels and Data".center(40, "="))
     print(df.index)
     print(df.columns)
     print(df.columns[1])
@@ -74,7 +74,25 @@ def retrieving_labels_and_data():
     print(df_.memory_usage())
 
 
+# Accessing and Modifying Data
+def accessing_and_modifying_data():
+    print("Accessing and Modifying Data".center(40, "="))
+    print(df["name"])
+    print(df.loc[10])
+    print(df.iloc[0])
+    print(df.loc[:, "city"])
+    print(df.iloc[1:6, [0, 1]])
+    print(df.at[12, "name"])
+    print(df.iat[2, 0])
+    df.loc[:13, "py-score"] = [40, 50, 60, 70]
+    df.loc[14:, "py-score"] = 0
+    print(df)
+    df.iloc[:, -1] = np.array([88.0, 79.0, 81.0, 80.0, 68.0, 61.0, 84.0])
+    print(df)
+
+
 if __name__ == "__main__":
     introduction()
     creating_dataframes()
     retrieving_labels_and_data()
+    accessing_and_modifying_data()
