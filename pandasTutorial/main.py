@@ -16,7 +16,7 @@ data = {
     "py-score": [88.0, 79.0, 81.0, 80.0, 68.0, 61.0, 84.0],
 }
 row_labels = [101, 102, 103, 104, 105, 106, 107]
-df = pd.DataFrame(data=data, index=row_labels)
+df: pd.DataFrame = pd.DataFrame(data=data, index=row_labels)
 
 
 # Introduction
@@ -91,8 +91,35 @@ def accessing_and_modifying_data():
     print(df)
 
 
+# Inserting and Deleting Rows
+def inserting_and_deleting_rows():
+    global df
+    john = pd.Series(data=["John", "Boston", 34, 79], index=df.columns, name=17)
+    print(john)
+    print(john.name)
+    df = df.append(john)
+    print(df)
+    df = df.drop(labels=[17])
+    print(df)
+    df["js-score"] = np.array([71.0, 95.0, 88.0, 79.0, 91.0, 91.0, 80.0])
+    print(df)
+    df["total-score"] = 0
+    print(df)
+    df.insert(
+        loc=4,
+        column="django-score",
+        value=np.array([86.0, 81.0, 78.0, 88.0, 74.0, 70.0, 81.0]),
+    )
+    print(df)
+    del df["total-score"]
+    print(df)
+    df = df.drop(labels="name", axis=1)
+    print(df)
+
+
 if __name__ == "__main__":
     introduction()
     creating_dataframes()
     retrieving_labels_and_data()
     accessing_and_modifying_data()
+    inserting_and_deleting_rows()
