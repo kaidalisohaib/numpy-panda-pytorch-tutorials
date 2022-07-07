@@ -114,8 +114,10 @@ def inserting_and_deleting_rows():
     print(df)
     del df["total-score"]
     print(df)
+    name_column = df["name"]
     df = df.drop(labels="name", axis=1)
     print(df)
+    df.insert(loc=0, column="name", value=name_column)
 
 
 # Applying Arithmetic Operations
@@ -123,21 +125,27 @@ def applying_arithmetic_operations():
     print("Applying Arithmetic Operations".center(40, "="))
     print(df["py-score"] + df["js-score"])
     print(df["py-score"] / 100)
-    df["total-score"] = (
-        0.4 * df["py-score"] + 0.3 * df["django-score"] + 0.3 * df["js-score"]
-    )
+    df["total"] = 0.4 * df["py-score"] + 0.3 * df["django-score"] + 0.3 * df["js-score"]
     print(df)
 
 
 # Applying NumPy and SciPy Functions
 def applying_numpy_and_scipy_functions():
+    print("Applying NumPy and SciPy Functions".center(40, "="))
     scores = df.iloc[:, 2:5]
     print(scores)
 
     print(np.average(scores, axis=1, weights=[0.4, 0.3, 0.3]))
-    del df["total-score"]
-    df["total-score"] = np.average(scores, axis=1, weights=[0.4, 0.3, 0.3])
+    del df["total"]
+    df["total"] = np.average(scores, axis=1, weights=[0.4, 0.3, 0.3])
     print(df)
+
+
+# Sorting a Pandas DataFrame
+def sorting_a_pandas_dataframe():
+    print("Sorting a Pandas DataFrame".center(40, "="))
+    print(df.sort_values(by="js-score", ascending=False))
+    print(df.sort_values(by=["total", "py-score"], ascending=[False, False]))
 
 
 if __name__ == "__main__":
@@ -148,3 +156,4 @@ if __name__ == "__main__":
     inserting_and_deleting_rows()
     applying_arithmetic_operations()
     applying_numpy_and_scipy_functions()
+    sorting_a_pandas_dataframe()
