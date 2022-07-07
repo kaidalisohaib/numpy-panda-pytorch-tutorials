@@ -1,29 +1,29 @@
 import numpy as np
 import pandas as pd
 
+data = {
+    "name": ["Xavier", "Ann", "Jana", "Yi", "Robin", "Amal", "Nori"],
+    "city": [
+        "Mexico City",
+        "Toronto",
+        "Prague",
+        "Shanghai",
+        "Manchester",
+        "Cairo",
+        "Osaka",
+    ],
+    "age": [41, 28, 33, 34, 38, 31, 37],
+    "py-score": [88.0, 79.0, 81.0, 80.0, 68.0, 61.0, 84.0],
+}
+row_labels = [101, 102, 103, 104, 105, 106, 107]
+df = pd.DataFrame(data=data, index=row_labels)
+
 
 # Introduction
 def introduction():
     print("Introduction".center(30, "="))
-    data = {
-        "name": ["Xavier", "Ann", "Jana", "Yi", "Robin", "Amal", "Nori"],
-        "city": [
-            "Mexico City",
-            "Toronto",
-            "Prague",
-            "Shanghai",
-            "Manchester",
-            "Cairo",
-            "Osaka",
-        ],
-        "age": [41, 28, 33, 34, 38, 31, 37],
-        "py-score": [88.0, 79.0, 81.0, 80.0, 68.0, 61.0, 84.0],
-    }
-
-    row_labels = [101, 102, 103, 104, 105, 106, 107]
 
     # Pandas DataFrame
-    df = pd.DataFrame(data=data, index=row_labels)
     print(df)
 
     print("\n", df.head(2))
@@ -35,6 +35,7 @@ def introduction():
 
 # Creating Pandas DataFrames
 def creating_dataframes():
+    print("Creating Pandas DataFrames".center(30, "="))
     # From a dictionary
     d = {"x": [1, 2, 3], "y": np.array([2, 4, 8]), "z": 100}
     print(pd.DataFrame(d), "\n")
@@ -52,27 +53,28 @@ def creating_dataframes():
     print(pd.DataFrame(list_data, columns=["x", "y", "z"], copy=True))
 
     # From Files
-    data = {
-        "name": ["Xavier", "Ann", "Jana", "Yi", "Robin", "Amal", "Nori"],
-        "city": [
-            "Mexico City",
-            "Toronto",
-            "Prague",
-            "Shanghai",
-            "Manchester",
-            "Cairo",
-            "Osaka",
-        ],
-        "age": [41, 28, 33, 34, 38, 31, 37],
-        "py-score": [88.0, 79.0, 81.0, 80.0, 68.0, 61.0, 84.0],
-    }
-    row_labels = [101, 102, 103, 104, 105, 106, 107]
-    df = pd.DataFrame(data=data, index=row_labels)
     df.to_csv("data.csv")
 
     print(pd.read_csv("data.csv", index_col=0))
 
 
+# Retrieving Labels and Data
+def retrieving_labels_and_data():
+    print("Retrieving Labels and Data".center(30, "="))
+    print(df.index)
+    print(df.columns)
+    print(df.columns[1])
+    df.index = np.arange(10, 17)
+    print(df)
+    print(df.to_numpy())
+    print(df.dtypes)
+    df_ = df.astype(dtype={"age": np.int32, "py-score": np.float32})
+    print(df_.dtypes)
+    print("Number of dimension:", df_.ndim, "Shape:", df_.shape, "Size", df_.size)
+    print(df_.memory_usage())
+
+
 if __name__ == "__main__":
     introduction()
     creating_dataframes()
+    retrieving_labels_and_data()
