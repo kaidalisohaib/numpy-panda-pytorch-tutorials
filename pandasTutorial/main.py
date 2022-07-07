@@ -93,6 +93,7 @@ def accessing_and_modifying_data():
 
 # Inserting and Deleting Rows
 def inserting_and_deleting_rows():
+    print("Inserting and Deleting Rows".center(40, "="))
     global df
     john = pd.Series(data=["John", "Boston", 34, 79], index=df.columns, name=17)
     print(john)
@@ -117,9 +118,19 @@ def inserting_and_deleting_rows():
     print(df)
 
 
+# Applying Arithmetic Operations
+def applying_arithmetic_operations():
+    print("Applying Arithmetic Operations".center(40, "="))
+    print(df["py-score"] + df["js-score"])
+    print(df["py-score"] / 100)
+    df["total"] = 0.4 * df["py-score"] + 0.3 * df["django-score"] + 0.3 * df["js-score"]
+    print(df)
+
+
 if __name__ == "__main__":
     introduction()
     creating_dataframes()
     retrieving_labels_and_data()
     accessing_and_modifying_data()
     inserting_and_deleting_rows()
+    applying_arithmetic_operations()
