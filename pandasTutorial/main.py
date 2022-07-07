@@ -150,11 +150,26 @@ def sorting_a_pandas_dataframe():
 
 # Filtering Data
 def filtering_data():
+    print("Filtering Data".center(40, "="))
     filter_ = df["django-score"] >= 80
     print(filter_)
     print(df[filter_])
     print(df[(df["py-score"] >= 80) & (df["js-score"] >= 80)])
     print(df.where(cond=df["django-score"] >= 80, other=0.0))
+
+
+# Handling Missing Data
+def handling_missing_data():
+    print("Handling Missing Data".center(40, "="))
+    df_ = pd.DataFrame({"x": [1, 2, np.nan, 4]})
+    print(df_)
+    print(df_.mean())
+    print(df_.mean(skipna=False))
+    print(df_.fillna(value=0))
+    print(df_.fillna(method="ffill"))
+    print(df_.fillna(method="bfill"))
+    print(df_.interpolate())
+    print(df_.dropna())
 
 
 if __name__ == "__main__":
@@ -167,3 +182,4 @@ if __name__ == "__main__":
     applying_numpy_and_scipy_functions()
     sorting_a_pandas_dataframe()
     filtering_data()
+    handling_missing_data()
