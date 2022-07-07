@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
@@ -145,10 +146,8 @@ def inserting_and_deleting_rows():
     print(df)
     del df["total-score"]
     print(df)
-    name_column = df["name"]
     df = df.drop(labels="name", axis=1)
     print(df)
-    df.insert(loc=0, column="name", value=name_column)
 
 
 # Applying Arithmetic Operations
@@ -163,6 +162,7 @@ def applying_arithmetic_operations():
 # Applying NumPy and SciPy Functions
 def applying_numpy_and_scipy_functions():
     print("Applying NumPy and SciPy Functions".center(40, "="))
+    print(df.columns)
     scores = df.iloc[:, 2:5]
     print(scores)
 
@@ -223,6 +223,15 @@ def tile_series():
     print(temp.rolling(window=3).mean())
 
 
+# Plotting With Pandas DataFrames
+def plotting_pandas_dataframes():
+    temp = pd.DataFrame(data={"temp_c": temp_c}, index=dt)
+    temp.plot().get_figure().savefig("temperatures.png")
+
+    df.loc[:, ["py-score", "total"]].plot.hist(bins=5, alpha=0.4)
+    plt.show()
+
+
 if __name__ == "__main__":
     introduction()
     creating_dataframes()
@@ -236,3 +245,4 @@ if __name__ == "__main__":
     handling_missing_data()
     iterating_over_dataframe()
     tile_series()
+    plotting_pandas_dataframes()
