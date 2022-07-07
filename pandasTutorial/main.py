@@ -148,6 +148,15 @@ def sorting_a_pandas_dataframe():
     print(df.sort_values(by=["total", "py-score"], ascending=[False, False]))
 
 
+# Filtering Data
+def filtering_data():
+    filter_ = df["django-score"] >= 80
+    print(filter_)
+    print(df[filter_])
+    print(df[(df["py-score"] >= 80) & (df["js-score"] >= 80)])
+    print(df.where(cond=df["django-score"] >= 80, other=0.0))
+
+
 if __name__ == "__main__":
     introduction()
     creating_dataframes()
@@ -157,3 +166,4 @@ if __name__ == "__main__":
     applying_arithmetic_operations()
     applying_numpy_and_scipy_functions()
     sorting_a_pandas_dataframe()
+    filtering_data()
