@@ -18,6 +18,37 @@ data = {
 row_labels = [101, 102, 103, 104, 105, 106, 107]
 df: pd.DataFrame = pd.DataFrame(data=data, index=row_labels)
 
+####
+
+temp_c = [
+    8.0,
+    7.1,
+    6.8,
+    6.4,
+    6.0,
+    5.4,
+    4.8,
+    5.0,
+    9.1,
+    12.8,
+    15.3,
+    19.1,
+    21.2,
+    22.1,
+    22.4,
+    23.1,
+    21.0,
+    17.9,
+    15.5,
+    14.4,
+    11.9,
+    11.0,
+    10.2,
+    9.1,
+]
+
+dt = pd.date_range(start="2019-10-27 00:00:00.0", periods=24, freq="H")
+
 
 # Introduction
 def introduction():
@@ -181,6 +212,17 @@ def iterating_over_dataframe():
         print(item)
 
 
+# Working With Time Series
+def tile_series():
+    print("Working With Time Series".center(40, "="))
+    print(dt)
+    temp = pd.DataFrame(data={"temp_c": temp_c}, index=dt)
+    print(temp)
+    print(temp["2019-10-27 05":"2019-10-27 14"])
+    print(temp.resample(rule="6h").mean())
+    print(temp.rolling(window=3).mean())
+
+
 if __name__ == "__main__":
     introduction()
     creating_dataframes()
@@ -193,3 +235,4 @@ if __name__ == "__main__":
     filtering_data()
     handling_missing_data()
     iterating_over_dataframe()
+    tile_series()
