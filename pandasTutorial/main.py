@@ -123,7 +123,20 @@ def applying_arithmetic_operations():
     print("Applying Arithmetic Operations".center(40, "="))
     print(df["py-score"] + df["js-score"])
     print(df["py-score"] / 100)
-    df["total"] = 0.4 * df["py-score"] + 0.3 * df["django-score"] + 0.3 * df["js-score"]
+    df["total-score"] = (
+        0.4 * df["py-score"] + 0.3 * df["django-score"] + 0.3 * df["js-score"]
+    )
+    print(df)
+
+
+# Applying NumPy and SciPy Functions
+def applying_numpy_and_scipy_functions():
+    scores = df.iloc[:, 2:5]
+    print(scores)
+
+    print(np.average(scores, axis=1, weights=[0.4, 0.3, 0.3]))
+    del df["total-score"]
+    df["total-score"] = np.average(scores, axis=1, weights=[0.4, 0.3, 0.3])
     print(df)
 
 
@@ -134,3 +147,4 @@ if __name__ == "__main__":
     accessing_and_modifying_data()
     inserting_and_deleting_rows()
     applying_arithmetic_operations()
+    applying_numpy_and_scipy_functions()
